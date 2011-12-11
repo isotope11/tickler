@@ -1,28 +1,31 @@
-require 'test_helper'
+require "minitest_helper"
 
-class CardTest < ActiveSupport::TestCase
-  def test_is_not_valid_without_name
-    card = Card.new(description: 'foo', folder_name: 1)
-    assert !card.valid?
+describe Card do
+  before do
+    @card = Card.new(name: 'foo', description: 'foo', folder_name: '1')
   end
 
-  def test_is_not_valid_without_description
-    card = Card.new(name: 'foo', folder_name: 1)
-    assert !card.valid?
+  it "must be valid" do
+    @card.valid?.must_equal true
   end
 
-  def test_is_not_valid_without_folder_name
-    card = Card.new(name: 'foo', description: 'foo')
-    assert !card.valid?
+  it "must not be valid without name" do
+    @card.name = nil
+    @card.valid?.must_equal false
   end
 
-  def test_is_not_valid_with_invalid_folder_name
-    card = Card.new(name: 'foo', description: 'foo', folder_name: 'bar')
-    assert !card.valid?
+  it "must not be valid without description" do
+    @card.description = nil
+    @card.valid?.must_equal false
   end
 
-  def test_is_valid_with_name_description_and_valid_folder_name
-    card = Card.new(name: 'foo', description: 'foo', folder_name: '1')
-    assert card.valid?
+  it "must not be valid without folder_name" do
+    @card.folder_name = nil
+    @card.valid?.must_equal false
+  end
+
+  it "must not be valid with invalid folder_name" do
+    @card.folder_name = 'bar'
+    @card.valid?.must_equal false
   end
 end

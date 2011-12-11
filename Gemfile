@@ -2,6 +2,12 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+# Provide an easy way to avoid controller boilerplate
+gem 'inherited_resources'
+
+# How all html should be written
+gem 'haml'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -32,6 +38,11 @@ gem 'jquery-rails'
 group :test do
   # We'll use minitest for this project
   gem 'minitest'
+  gem 'minitest-rails'
+  gem 'factory_girl'
+  gem 'capybara'
+  gem 'capybara_minitest_spec'
+  gem 'database_cleaner'
 
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false

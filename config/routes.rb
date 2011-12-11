@@ -1,4 +1,6 @@
 Tickler::Application.routes.draw do
+  resources :cards
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

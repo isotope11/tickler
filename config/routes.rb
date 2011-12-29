@@ -1,5 +1,5 @@
 Tickler::Application.routes.draw do
-  root :to => 'folders#index'
+  root :to => 'folders#current'
 
   resources :cards
   resources :folders do

@@ -7,3 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  <% unless Rails.env.test? || Rails.env.cucumber? %>
+    <% # only use chosen in dev or prod - it breaks cukes %>
+    $(".chzn-select").chosen();
+  <% end %>
+});

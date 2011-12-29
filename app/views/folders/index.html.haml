@@ -1,3 +1,4 @@
 .folders
-  - @folders.each do |folder|
-    = link_to folder, folder_path(folder)
+  %ul
+    - @folders.each do |folder|
+      %li= link_to folder, folder_path(folder)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229185723) do
+ActiveRecord::Schema.define(:version => 20111229205123) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
@@ -21,5 +21,7 @@ ActiveRecord::Schema.define(:version => 20111229185723) do
     t.datetime "updated_at"
     t.boolean  "completed"
   end
+
+  add_index "cards", ["folder_name"], :name => "index_cards_on_folder_name"
 
 end

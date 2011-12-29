@@ -1,31 +1,41 @@
 require "minitest_helper"
 
 describe Card do
-  before do
-    @card = Card.new(name: 'foo', description: 'foo', folder_name: '1')
+  subject do
+    Card.new(name: 'foo', description: 'foo', folder_name: 'jan')
   end
 
-  it "must be valid" do
-    @card.valid?.must_equal true
+  describe "with valid attributes" do
+    it "should be valid" do
+      subject.valid?.must_equal true
+    end
   end
 
-  it "must not be valid without name" do
-    @card.name = nil
-    @card.valid?.must_equal false
+  describe "without name" do
+    it "should not be valid" do
+      subject.name = nil
+      subject.valid?.wont_equal true
+    end
   end
 
-  it "must not be valid without description" do
-    @card.description = nil
-    @card.valid?.must_equal false
+  describe "without description" do
+    it "should not be valid" do
+      subject.description = nil
+      subject.valid?.wont_equal true
+    end
   end
 
-  it "must not be valid without folder_name" do
-    @card.folder_name = nil
-    @card.valid?.must_equal false
+  describe "without folder_name" do
+    it "should not be valid" do
+      subject.folder_name = nil
+      subject.valid?.wont_equal true
+    end
   end
 
-  it "must not be valid with invalid folder_name" do
-    @card.folder_name = 'bar'
-    @card.valid?.must_equal false
+  describe "with invalid folder_name" do
+    it "should not be valid" do
+      subject.folder_name = 'bar'
+      subject.valid?.wont_equal true
+    end
   end
 end

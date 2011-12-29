@@ -58,6 +58,7 @@ Tabulous.setup do |config|
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
       [    :folders_tab    ,    'Folders'       ,    folders_path    ,    true        ,    true        ],
+      [    :cards_tab      ,    'Cards'         ,    cards_path      ,    false       ,    false       ],
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
@@ -84,6 +85,7 @@ Tabulous.setup do |config|
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#
       [    :folders      ,    :all_actions    ,    :folders_tab    ],
+      [    :cards        ,    :all_actions    ,    :folders_tab    ],
       #------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#

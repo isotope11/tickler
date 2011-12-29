@@ -14,10 +14,17 @@ class RequestSpec < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
 end
+
 MiniTest::Spec.register_spec_type /integration$/i, RequestSpec
 
+# Database cleaner.
+DatabaseCleaner.strategy = :truncation
+class MiniTest::Spec
+  before :each do
+    DatabaseCleaner.clean
+  end
+end
+
 class MiniTest::Rails::Spec
-
   # Add methods to be used by all specs here...
-
 end

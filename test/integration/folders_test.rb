@@ -14,6 +14,18 @@ describe 'Folder integration' do
     end
   end
 
+  it 'shows me a new card form when I go to show' do
+    FactoryGirl.create :card, folder_name: '1', name: 'card one'
+    visit folder_path('1')
+    within '.folder' do
+      within 'form' do
+        page.must_have_css 'input#card_name'
+        page.must_have_css 'textarea#card_description'
+        page.must_have_css 'input[type=submit]'
+      end
+    end
+  end
+
   it 'shows me a list of folders when I go to index' do
     visit folders_path
     page.must_have_content 'Folders'

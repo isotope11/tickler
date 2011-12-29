@@ -49,6 +49,7 @@ group :test do
   gem 'capybara'
   gem 'capybara_minitest_spec'
   gem 'database_cleaner'
+  gem 'delorean'
 
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false

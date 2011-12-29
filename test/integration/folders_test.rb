@@ -1,6 +1,13 @@
 require 'minitest_helper'
 
 describe 'Folder integration' do
+  it "shows me today's folder when I go to current" do
+    Delorean.time_travel_to('2011-01-01') do
+      visit current_folders_path
+      page.must_have_content 'Folder: 1'
+    end
+  end
+
   it 'shows me the current folder when I go to show' do
     FactoryGirl.create :card, folder_name: '1', name: 'card one'
     visit folder_path('1')

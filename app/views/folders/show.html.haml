@@ -4,5 +4,5 @@
     %ul
       - @cards.each do |card|
         %li= link_to card, card
+    %h3 Add new card
     = render partial: 'cards/form', locals: { card: @card }
-

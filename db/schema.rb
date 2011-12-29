@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211212257) do
+ActiveRecord::Schema.define(:version => 20111229185723) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20111211212257) do
     t.string   "folder_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "completed"
   end
 
 end

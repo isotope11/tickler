@@ -2,7 +2,11 @@ Tickler::Application.routes.draw do
   root :to => 'folders#index'
 
   resources :cards
-  resources :folders
+  resources :folders do
+    collection do
+      get :current
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

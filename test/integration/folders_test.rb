@@ -16,6 +16,7 @@ describe 'Folder integration' do
 
   it 'shows me a list of folders when I go to index' do
     visit folders_path
+    page.must_have_content 'Folders'
     within '.folders ul' do
       page.must_have_link 'jan'
     end

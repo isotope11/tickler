@@ -10,8 +10,9 @@ describe 'Card integration' do
   end
 
   it 'creates a card on post' do
-    attrs = FactoryGirl.build(:card).attributes
-    page.driver.post cards_path, :card => attrs
+    attrs = FactoryGirl.build(:card, :folder_name => '1').attributes
+    page.driver.follow :post, cards_path, :card => attrs
     Card.count.must_equal 1
+    current_path.must_equal '/folders/1'
   end
 end

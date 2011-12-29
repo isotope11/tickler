@@ -8,6 +8,7 @@ class FoldersController < ApplicationController
     unless valid_folder?
       redirect_to folders_path and return
     end
+    @card = Card.new folder_name: @folder_name
     @cards = Card.for_folder(@folder_name)
   end
 

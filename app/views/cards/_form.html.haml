@@ -1,0 +1,8 @@
+= semantic_form_for card do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :name, :hint => "Enter a summary of the card"
+    = f.input :description, :hint => "Feel free to use markdown.", :input_html => { :rows => 5, :class => 'xxlarge' }
+    = f.input :folder_name, :hint => "1-31 or jan-dec", :collection => Card::VALID_FOLDER_NAMES, :input_html => { :class => 'chzn-select' }
+  = f.buttons do
+    = f.commit_button :button_html => { class: 'primary' }

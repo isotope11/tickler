@@ -3,12 +3,6 @@
   .cards
     %ul
       - @cards.each do |card|
-        %li= link_to card
-    = semantic_form_for Card.new do |f|
-      = f.semantic_errors
-      = f.inputs do
-        = f.input :name, :hint => "Enter a summary of the card"
-        = f.input :description, :hint => "Enter a freeform description.  Feel free to use markdown."
-      = f.buttons do
-        = f.commit_button :button_html => { class: 'primary' }
+        %li= link_to card, card
+    = render partial: 'cards/form', locals: { card: @card }
 

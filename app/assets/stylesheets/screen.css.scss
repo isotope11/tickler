@@ -1,5 +1,37 @@
 @import 'bootstrap';
+@import 'compass/css3';
+
+$card-border: #fee9cc;
+$card-background: lighten($card-border, 6%);
+$card-color: darken($card-border, 60%);
 
 body{
   padding-top: 60px;
+}
+
+.sidebar .folders a{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  padding: .25em;
+}
+.sidebar .folders .months a{
+  width: 2em;
+}
+
+.card-module{
+  display: inline-block;
+  vertical-align: top;
+  padding: .5em;
+  margin: 1em .85em;
+  width: 40em;
+  min-height: 20em;
+  border: 1px solid $card-border;
+  background-color: $card-background;
+  @include border-radius(4px);
+  color: $card-color;
+  h2, h3, h4, h5{
+    color: $card-color;
+  }
 }

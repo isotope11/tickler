@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Tickler
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %div.topbar
+      %div.topbar-inner
+        %div.container-fluid
+          = link_to 'Tickler', root_path, class: 'brand'
+          = tabs
+    %div.container-fluid
+      .sidebar
+        = render partial: 'layouts/sidebar'
+      .content
+        = yield
+    = yield :javascripts

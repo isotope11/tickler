@@ -1,8 +1,17 @@
 .folder
   %h2= "Folder: #{@folder_name}"
+  %button.btn.primary{ 'data-controls-modal' => 'add-card', 'data-backdrop' => 'true', 'data-keyboard' => 'true' } Add Card
   .cards
-    %ul
-      - @cards.each do |card|
-        %li= link_to card, card
-    %h3 Add new card
-    = render partial: 'cards/form', locals: { card: @card }
+    - @cards.each do |card|
+      = render partial: 'cards/card', locals: { card: card }
+    #add-card.modal.fade
+      .modal-header
+        %a.close{ href: '#' } &times;
+        %h3 Add Card
+      .modal-body
+        = render partial: 'cards/form', locals: { card: @card }
+- content_for :javascripts do
+  :javascript
+    $(function(){
+      $('#add-card').addClass('hide');
+    });

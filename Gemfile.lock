@@ -1,3 +1,12 @@
+GIT
+  remote: http://github.com/chriseppstein/compass.git
+  revision: 4171c0eef73b0817c971bfceb3cc92bb0bf4df49
+  specs:
+    compass (0.12.alpha.3.4171c0e)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -47,6 +56,7 @@ GEM
     childprocess (0.2.3)
       ffi (~> 1.0.6)
     chronic (0.6.6)
+    chunky_png (1.2.5)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -69,6 +79,7 @@ GEM
     formtastic-bootstrap (1.1.2)
       formtastic
       rails (~> 3.1.0)
+    fssm (0.2.7)
     haml (3.1.4)
     has_scope (0.5.1)
     hike (1.2.1)
@@ -164,6 +175,7 @@ DEPENDENCIES
   capybara
   capybara_minitest_spec
   coffee-rails (~> 3.1.1)
+  compass!
   database_cleaner
   delorean
   factory_girl

@@ -1,10 +1,1 @@
-.card
-  %h2= @card.name
-  .description
-    = @card.description
-  .actions
-    - unless @card.completed?
-      .complete
-        = form_for @card do |f|
-          = f.hidden_field :completed, value: true
-          = button_tag 'Complete', class: 'btn primary'
+= render partial: 'card', locals: { card: @card }

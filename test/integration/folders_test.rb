@@ -15,8 +15,8 @@ describe 'Folder integration' do
       within 'h2' do
         page.must_have_content 'Folder: 1'
       end
-      within '.cards ul' do
-        page.must_have_link 'card one'
+      within '.cards' do
+        page.must_have_content 'card one'
       end
     end
   end
@@ -24,13 +24,9 @@ describe 'Folder integration' do
   it 'shows me a new card form when I go to show' do
     FactoryGirl.create :card, folder_name: '1', name: 'card one'
     visit folder_path('1')
-    within '.folder' do
-      within 'form' do
-        page.must_have_css 'input#card_name'
-        page.must_have_css 'textarea#card_description'
-        page.must_have_css 'input[type=submit]'
-      end
-    end
+    page.must_have_css 'input#card_name'
+    page.must_have_css 'textarea#card_description'
+    page.must_have_css 'input[type=submit]'
   end
 
   it 'shows me a list of folders when I go to index' do

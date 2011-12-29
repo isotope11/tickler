@@ -1,0 +1,10 @@
+.well
+  .folders
+    .days
+      %h5 Days
+      - Card::DAY_FOLDER_NAMES.each do |folder|
+        = link_to folder, folder_path(folder)
+    .months
+      %h5 Months
+      - Card::MONTH_FOLDER_NAMES.each do |folder|
+        = link_to folder, folder_path(folder)

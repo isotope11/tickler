@@ -9,7 +9,7 @@ class FoldersController < ApplicationController
       redirect_to folders_path and return
     end
     @card = Card.new folder_name: @folder_name
-    @cards = Card.for_folder(@folder_name)
+    @cards = Card.for_folder(@folder_name).order('id DESC')
   end
 
   # Folders#current will redirect you to the folder for today's date.

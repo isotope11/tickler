@@ -12,6 +12,7 @@ gem 'haml'
 # http://rubysource.com/too-good-to-be-true-twitter-bootstrap-meets-formtastic-and-tabulous/
 gem 'bootstrap-sass'
 gem 'formtastic-bootstrap'
+gem 'tabulous'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

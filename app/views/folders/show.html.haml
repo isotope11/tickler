@@ -1,0 +1,6 @@
+.folder
+  %h2= "Folder: #{@folder_name}"
+  .cards
+    %ul
+      - @cards.each do |card|
+        %li= link_to card

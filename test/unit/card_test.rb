@@ -2,7 +2,7 @@ require "minitest_helper"
 
 describe Card do
   subject do
-    Card.new(name: 'foo', description: 'foo', folder_name: 'jan')
+    Card.new name: 'foo', description: 'foo', folder_name: 'jan'
   end
 
   describe "with valid attributes" do

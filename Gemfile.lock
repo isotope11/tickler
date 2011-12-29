@@ -31,6 +31,8 @@ GEM
       multi_json (~> 1.0)
     ansi (1.4.1)
     arel (2.2.1)
+    bootstrap-sass (1.4.3)
+      sass-rails (~> 3.1)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -58,6 +60,11 @@ GEM
     factory_girl (2.3.2)
       activesupport
     ffi (1.0.11)
+    formtastic (2.0.2)
+      rails (~> 3.0)
+    formtastic-bootstrap (1.1.2)
+      formtastic
+      rails (~> 3.1.0)
     haml (3.1.4)
     has_scope (0.5.1)
     hike (1.2.1)
@@ -146,11 +153,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   capybara
   capybara_minitest_spec
   coffee-rails (~> 3.1.1)
   database_cleaner
   factory_girl
+  formtastic-bootstrap
   haml
   inherited_resources
   jquery-rails

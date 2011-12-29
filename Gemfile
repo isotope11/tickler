@@ -8,6 +8,11 @@ gem 'inherited_resources'
 # How all html should be written
 gem 'haml'
 
+# Use bootstrap and formtastic all nicely:
+# http://rubysource.com/too-good-to-be-true-twitter-bootstrap-meets-formtastic-and-tabulous/
+gem 'bootstrap-sass'
+gem 'formtastic-bootstrap'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

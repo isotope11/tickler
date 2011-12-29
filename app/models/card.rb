@@ -5,4 +5,12 @@ class Card < ActiveRecord::Base
 
   validates_presence_of :name, :description, :folder_name
   validates_inclusion_of :folder_name, in: VALID_FOLDER_NAMES
+
+  def to_s
+    name
+  end
+
+  def self.for_folder(folder_name)
+    where(folder_name: folder_name)
+  end
 end

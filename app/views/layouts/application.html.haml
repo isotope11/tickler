@@ -20,7 +20,8 @@
               %li= link_to "Sign in", new_user_session_path
     %div.container-fluid
       .sidebar
-        = render partial: 'layouts/sidebar'
+        - if current_user
+          = render partial: 'layouts/sidebar'
       .content
         - flash.each do |name, msg|
           = display_flash(name,msg)

@@ -5,10 +5,12 @@
     = f.input :email, hint:"Enter your email address"
     = f.input :password, hint:"Enter password"
   - if devise_mapping.rememberable?
-    .clearfix
-      = f.label :remember_me
-      .input
-      = f.check_box :remember_me
+    .input
+      %ul.inputs-list
+        %li
+          %label
+            = f.check_box :remember_me
+            %span Remember me
   = f.buttons do
     = f.commit_button :button_html => {:class => "primary"}
 = render :partial => "devise/shared/links"

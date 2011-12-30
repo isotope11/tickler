@@ -13,6 +13,10 @@ require File.expand_path('../support/factories', __FILE__)
 class RequestSpec < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
+
+  def login_as(email, password)
+    page.driver.post user_session_path(user: { email: email, password: password })
+  end
 end
 
 MiniTest::Spec.register_spec_type /integration$/i, RequestSpec
@@ -23,8 +27,4 @@ class MiniTest::Spec
   before :each do
     DatabaseCleaner.clean
   end
-end
-
-class MiniTest::Rails::Spec
-  # Add methods to be used by all specs here...
 end

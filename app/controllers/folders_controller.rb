@@ -1,4 +1,6 @@
 class FoldersController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     @folders = Card::VALID_FOLDER_NAMES
   end
@@ -9,8 +11,8 @@ class FoldersController < ApplicationController
       redirect_to folders_path and return
     end
     @card = Card.new folder_name: @folder_name
-    @active_cards = Card.active.for_folder(@folder_name).order('id DESC')
-    @completed_cards = Card.completed.for_folder(@folder_name).order('id DESC')
+    @active_cards = Card.for_user(current_user).active.for_folder(@folder_name).order('id DESC')
+    @completed_cards = Card.for_user(current_user).completed.for_folder(@folder_name).order('id DESC')
   end
 
   # Folders#current will redirect you to the folder for today's date.

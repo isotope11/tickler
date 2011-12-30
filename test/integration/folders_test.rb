@@ -1,6 +1,11 @@
 require 'minitest_helper'
 
 describe 'Folder integration' do
+  before :each do
+    @user = FactoryGirl.create(:user)
+    login_as @user.email, '123456'
+  end
+
   it "shows me today's folder when I go to current" do
     Delorean.time_travel_to('2011-01-01') do
       visit current_folders_path

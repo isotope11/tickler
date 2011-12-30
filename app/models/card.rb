@@ -3,8 +3,9 @@ class Card < ActiveRecord::Base
   MONTH_FOLDER_NAMES = %w(jan feb mar apr may jun jul aug sep oct nov dec)
   VALID_FOLDER_NAMES = DAY_FOLDER_NAMES + MONTH_FOLDER_NAMES
 
-  validates_presence_of :name, :description, :folder_name
+  validates_presence_of :name, :description, :folder_name, :user_id
   validates_inclusion_of :folder_name, in: VALID_FOLDER_NAMES
+  belongs_to :user
 
   def to_s
     name
@@ -24,5 +25,9 @@ class Card < ActiveRecord::Base
 
   def self.completed
     where(completed: true)
+  end
+
+  def self.for_user(user)
+    where(user_id: user.id)
   end
 end

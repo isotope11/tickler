@@ -42,6 +42,9 @@ module Tickler
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Let's not access the database when we precompile assets
+    config.assets.initialize_on_precompile = false
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 

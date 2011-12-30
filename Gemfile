@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 gem 'formtastic-bootstrap'
 gem 'tabulous'
 
+gem 'devise'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

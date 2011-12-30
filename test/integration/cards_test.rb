@@ -1,6 +1,11 @@
 require 'minitest_helper'
 
 describe 'Card integration' do
+  before :each do
+    @user = FactoryGirl.create(:user)
+    login_as @user.email, '123456'
+  end
+
   it 'shows me the card when I go to show' do
     card = FactoryGirl.create :card, name: 'shave the llama'
     visit card_path(card)

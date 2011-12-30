@@ -57,8 +57,12 @@ Tabulous.setup do |config|
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
-      [    :folders_tab    ,    'Folders'       ,    folders_path    ,    true        ,    true        ],
-      [    :cards_tab      ,    'Cards'         ,    cards_path      ,    false       ,    false       ],
+      [    :folders_tab       ,    'Folders'       ,    folders_path    ,    true        ,    true        ],
+      [    :cards_tab         ,    'Cards'         ,    cards_path      ,    false       ,    false       ],
+      [    :sessions_tab      ,    'Sessions'      ,    root_path       ,    false       ,    false       ],
+      [    :registrations_tab ,    'registrations' ,    root_path       ,    false       ,    false       ],
+      [    :passwords_tab     ,    'passwords'     ,    root_path       ,    false       ,    false       ],
+      [    :confirmations_tab ,    'confirmations' ,    root_path       ,    false       ,    false       ]
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
@@ -84,8 +88,12 @@ Tabulous.setup do |config|
       #------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#
-      [    :folders      ,    :all_actions    ,    :folders_tab    ],
-      [    :cards        ,    :all_actions    ,    :folders_tab    ],
+      [    :folders       ,    :all_actions    ,    :folders_tab    ],
+      [    :cards         ,    :all_actions    ,    :cards_tab      ],
+      [    :sessions      ,    :all_actions    ,    :sessions_tab   ],
+      [    :registrations ,    :all_actions    ,    :registrations_tab ],
+      [    :passwords     ,    :all_actions    ,    :passwords_tab   ],
+      [    :confirmations ,    :all_actions    ,    :confirmations_tab ]
       #------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#

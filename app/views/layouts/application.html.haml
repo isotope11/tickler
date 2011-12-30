@@ -11,9 +11,18 @@
         %div.container-fluid
           = link_to 'Tickler', root_path, class: 'brand'
           = tabs
+          %ul.nav.secondary-nav
+            - if user_signed_in?
+              %li= link_to "Settings" , edit_user_registration_path
+              %li= link_to "Logout", destroy_user_session_path , :method => :delete
+            - else
+              %li= link_to "Sign up", new_user_registration_path
+              %li= link_to "Sign in", new_user_session_path
     %div.container-fluid
       .sidebar
         = render partial: 'layouts/sidebar'
       .content
+        - flash.each do |name, msg|
+          = display_flash(name,msg)
         = yield
     = yield :javascripts

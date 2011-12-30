@@ -1,8 +1,12 @@
 require "minitest_helper"
 
 describe Card do
+  before do
+    @user = FactoryGirl.create(:user)
+  end
+
   subject do
-    Card.new name: 'foo', description: 'foo', folder_name: 'jan'
+    Card.new name: 'foo', description: 'foo', folder_name: 'jan', user: @user
   end
 
   describe "with valid attributes" do

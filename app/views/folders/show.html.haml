@@ -2,7 +2,7 @@
   %h2= "Folder: #{@folder_name}"
   %button.btn.primary{ 'data-controls-modal' => 'add-card', 'data-backdrop' => 'true', 'data-keyboard' => 'true' } Add Card
   .cards
-    - @cards.each do |card|
+    - (@active_cards + @completed_cards).each do |card|
       = render partial: 'cards/card', locals: { card: card }
     #add-card.modal.fade
       .modal-header

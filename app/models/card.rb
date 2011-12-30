@@ -10,7 +10,19 @@ class Card < ActiveRecord::Base
     name
   end
 
+  def status
+    completed? ? 'completed' : 'active'
+  end
+
   def self.for_folder(folder_name)
     where(folder_name: folder_name)
+  end
+
+  def self.active
+    where("completed IS NOT true")
+  end
+
+  def self.completed
+    where(completed: true)
   end
 end

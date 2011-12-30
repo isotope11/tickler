@@ -4,6 +4,8 @@
 $card-border: #fee9cc;
 $card-background: lighten($card-border, 6%);
 $card-color: darken($card-border, 60%);
+$card-background-completed: #ddd;
+$card-color-completed: darken($card-background-completed, 50%);
 
 body{
   padding-top: 60px;
@@ -33,5 +35,12 @@ body{
   color: $card-color;
   h2, h3, h4, h5{
     color: $card-color;
+  }
+  &.completed{
+    background-color: $card-background-completed;
+    color: $card-color-completed;
+    h2, h3, h4, h5{
+      color: $card-color-completed;
+    }
   }
 }

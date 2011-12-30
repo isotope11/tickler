@@ -16,3 +16,5 @@
 
 # Ignore swap files
 *.sw[mnop]
+
+config/database.yml

@@ -1,5 +1,5 @@
 %h2= "Edit #{resource_name.to_s.humanize}"
-= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+= semantic_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.semantic_errors
   = f.inputs do
     = f.input :email, hint:"Enter your email address"
@@ -7,11 +7,11 @@
     = f.input :password_confirmation, hint:"Confirm new password"
     = f.input :current_password, hint:"Enter current password (we need your current password to confirm your changes)"
   = f.buttons do
-    = f.commit_button :button_html => {:class => "primary"}
+    = f.commit_button button_html: {class: "primary"}
 %h3 Cancel my account
  
 %p
   Unhappy?
-  = link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete
+  = link_to "Cancel my account", registration_path(resource_name), confirm: "Are you sure?", method: :delete
  
 = link_to "Back", :back

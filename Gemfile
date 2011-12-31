@@ -19,7 +19,7 @@ gem 'devise'
 gem 'draper'
 
 # Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+# gem 'rails',     git: 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
@@ -27,7 +27,7 @@ gem 'pg'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
-  gem 'compass', :git => 'http://github.com/chriseppstein/compass.git'
+  gem 'compass', git: 'http://github.com/chriseppstein/compass.git'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -44,7 +44,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+# gem 'ruby-debug19', require: 'ruby-debug'
 
 group :test do
   # We'll use minitest for this project
@@ -57,5 +57,5 @@ group :test do
   gem 'delorean'
 
   # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
+  gem 'turn', '0.8.2', require: false
 end

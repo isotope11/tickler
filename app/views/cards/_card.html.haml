@@ -19,4 +19,4 @@
         = f.label :folder_name
         .input
           = f.select :folder_name, Card::VALID_FOLDER_NAMES, class: 'chzn-select'
-          = f.submit 'Move', :class => 'btn'
+          = f.submit 'Move', class: 'btn'

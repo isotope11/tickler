@@ -58,5 +58,5 @@ Tickler::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'tickler-app.heroku.com' }
+  config.action_mailer.default_url_options = { host: 'tickler-app.heroku.com' }
 end

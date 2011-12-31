@@ -22,9 +22,12 @@ end
 MiniTest::Spec.register_spec_type /integration$/i, RequestSpec
 
 # Database cleaner.
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :transaction
 class MiniTest::Spec
   before :each do
+    DatabaseCleaner.start
+  end
+  after :each do
     DatabaseCleaner.clean
   end
 end

@@ -8,7 +8,7 @@ Tickler::Application.load_tasks
 
 desc 'run specs for travis'
 task :travis  do
-  Rake::Task["app:db:create"].invoke
-  Rake::Task["app:db:schema:load"].invoke
+  Rake::Task["db:create"].invoke
+  Rake::Task["db:schema:load"].invoke
   Rake::Task["test"].invoke
 end

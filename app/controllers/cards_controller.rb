@@ -1,4 +1,5 @@
 class CardsController < InheritedResources::Base
+  defaults :resource_class => CardDecorator
   before_filter :authenticate_user!
 
   def create

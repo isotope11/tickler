@@ -3,7 +3,7 @@
   %button.btn.primary{ 'data-controls-modal' => 'add-card', 'data-backdrop' => 'true', 'data-keyboard' => 'true' } Add Card
   .cards
     - (@active_cards + @completed_cards).each do |card|
-      = render partial: 'cards/card', locals: { card: card }
+      = render partial: 'cards/card', locals: { card: CardDecorator.decorate(card) }
     #add-card.modal.fade
       .modal-header
         %a.close{ href: '#' } &times;

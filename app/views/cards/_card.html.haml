@@ -1,22 +1,8 @@
-%div{ class: "card-module #{card.status}" }
+%div{ class: card.html_class }
   %h2.name= card.name
-  - unless @folder_name
-    .folder
-      In
-      = link_to "folder #{card.folder_name}", folder_path(card.folder_name)
+  = card.folder_link(@folder_name)
   .description
     = card.description
   .card-actions
-    - unless card.completed?
-      .complete
-        %h4 Complete
-        = form_for card do |f|
-          = f.hidden_field :completed, value: true
-          = button_tag 'Complete', class: 'btn'
-    .move
-      %h4 Move
-      = form_for card do |f|
-        = f.label :folder_name
-        .input
-          = f.select :folder_name, Card::VALID_FOLDER_NAMES, class: 'chzn-select'
-          = f.submit 'Move', class: 'btn'
+    = card.complete_button
+    = card.move_interface

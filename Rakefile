@@ -8,6 +8,7 @@ Tickler::Application.load_tasks
 
 desc 'run specs for travis'
 task :travis  do
+  cp File.expand_path('../config/database.yml.postgresql', __FILE__), File.expand_path('../config/database.yml', __FILE__)
   Rake::Task["db:create"].invoke
   Rake::Task["db:schema:load"].invoke
   Rake::Task["test"].invoke

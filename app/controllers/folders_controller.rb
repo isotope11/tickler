@@ -11,8 +11,9 @@ class FoldersController < ApplicationController
       redirect_to folders_path and return
     end
     @card = Card.new folder_name: @folder_name
-    @active_cards = Card.for_user(current_user).active.for_folder(@folder_name).order('id DESC')
-    @completed_cards = Card.for_user(current_user).completed.for_folder(@folder_name).order('id DESC')
+    cards_in_folder = Card.for_user(current_user).for_folder(@folder_name).order('id DESC')
+    @active_cards = CardDecorator.decorate(cards_in_folder.active)
+    @completed_cards = CardDecorator.decorate(cards_in_folder.completed)
   end
 
   # Folders#current will redirect you to the folder for today's date.

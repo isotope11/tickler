@@ -16,6 +16,8 @@ gem 'tabulous'
 
 gem 'devise'
 
+gem 'draper'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

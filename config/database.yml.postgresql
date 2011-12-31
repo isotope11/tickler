@@ -1,6 +1,5 @@
 login: &login
   adapter: postgresql
-  encoding: unicode
   username: postgres
 
 development: &development

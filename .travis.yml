@@ -1,3 +1,5 @@
+before_script:
+  - "psql -c 'create database tickler_test;' -U postgres"
 script: "bundle exec rake travis"
 notifications:
   email:

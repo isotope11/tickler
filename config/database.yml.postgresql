@@ -1,8 +1,7 @@
 login: &login
   adapter: postgresql
   encoding: unicode
-  username: jadams
-  pool: 5
+  username: postgres
 
 development: &development
   database: tickler_development

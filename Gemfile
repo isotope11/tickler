@@ -55,6 +55,7 @@ group :test do
   gem 'capybara_minitest_spec'
   gem 'database_cleaner'
   gem 'delorean'
+  gem 'sqlite3'
 
   # Pretty printed test output
   gem 'turn', '0.8.2', require: false

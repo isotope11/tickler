@@ -13,3 +13,11 @@ task :travis  do
   Rake::Task["db:schema:load"].invoke
   Rake::Task["test"].invoke
 end
+
+desc 'run specs for jenkins'
+task :jenkins  do
+  cp File.expand_path('../config/database.yml.sqlite', __FILE__), File.expand_path('../config/database.yml', __FILE__)
+  Rake::Task["db:create"].invoke
+  Rake::Task["db:schema:load"].invoke
+  Rake::Task["test"].invoke
+end
